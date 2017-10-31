@@ -14,14 +14,16 @@ function increaseRankBy(n) {
 }
 // pulls out the most deeply nested child from div#grand-node
 function deepestChild() {
+  // get beginning node
   var id = document.getElementById("grand-node");
+  // get its child node ([0] beacuse it's the first of only child)
   var childNode = id.children[0];
-
+  // traverse down the DOM tree until we reach the last nested node
   while(childNode) {
     id = childNode;
     childNode = id.children[0];
   }
-
+  // return last nested node 
   return id;
 }
 
