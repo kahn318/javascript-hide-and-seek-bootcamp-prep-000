@@ -14,7 +14,15 @@ function increaseRankBy(n) {
 }
 // pulls out the most deeply nested child from div#grand-node
 function deepestChild() {
-  return document.querySelector("div#grand-node div div div div")
+  var id = document.getElementById("grand-node");
+  var childNode = id.children[0];
+
+  while(childNode) {
+    id = childNode;
+    childNode = id.children[0];
+  }
+
+  return id;
 }
 
 /*
